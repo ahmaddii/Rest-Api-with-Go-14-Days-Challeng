@@ -19,8 +19,8 @@ func Connect() {
 
 	if dsn == "" {
 
-		dsn = "backend-programmer:example-password@tcp(127.0.0.1:3306)/todo"
-
+		dsn = "backend-programmer:example-password@tcp(host.docker.internal:3306)/todo"
+		// HOST THE docker internal means the containerized api which we created can now communicate to host machine which is mysql server whithen in the linux
 	}
 
 	var err error

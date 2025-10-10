@@ -11,17 +11,15 @@ func SetupRoute() *mux.Router {
 
 	routes := mux.NewRouter() // create routes for the endpoint of api
 
-	routes.HandleFunc("/login", controllers.Login).Methods("POST") // Public Route anyone can login and can get the jwt token 
+	routes.HandleFunc("/login", controllers.Login).Methods("POST") // Public Route anyone can login and can get the jwt token
 
 	api := routes.PathPrefix("/api").Subrouter() // all other routes required the jwt token and all are protected
-
 
 	// you can use subrouter inside the routes but the upper one is resusable by pathprefix
 
 	// which is like api/tasks now become this url
 
 	api.Use(middleware.ValidateJWT) // use jwt for validation // with this line all routes are protected
-	
 
 	// now all the routes enpoint becomes like api/tasks , api/tasks{id} ...
 
