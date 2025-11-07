@@ -18,7 +18,7 @@ func main() {
 
 	r := routes.SetupProductRoute() // call setup route fun
 
-	log.Println("Server Started on port 8080...")
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Println("Server Started on port 9090...")
+	log.Fatal(http.ListenAndServe(":9090", r))
 
 }

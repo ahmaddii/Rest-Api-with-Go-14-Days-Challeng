@@ -20,7 +20,7 @@ func Connect() {
 
 	if dsn == "" {
 
-		dsn = "backend-programmer:example-password@tcp(127.0.0.1:3306)/product"
+		dsn = "backend-programmer:example-password@tcp(host.docker.internal:3306)/product"
 
 	}
 
